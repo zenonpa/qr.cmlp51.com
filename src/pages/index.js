@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import styled from "styled-components";
 import personasData from "../data/personas.json";
 
-const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
+//const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
 
 const pageStyles = {
   color: "#232129",
@@ -108,9 +108,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items1.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}

@@ -3,8 +3,10 @@
     "id": 1,
     "section":1,
     "title": "AGUIRRE QUISPE Jorge Luis",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/jorge-aguirre.jpg",
     "lines": [
       "Vive en Italia",
+      "https://www.facebook.com/jorgeluis.aguirre.90",
       "Cumple años el 8 de Octubre"
     ]
   },
@@ -12,7 +14,9 @@
     "id": 2,
     "section":1,
     "title": "ALAYO PALACIOS Leonid Roberto",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/leonid-alayo.jpg",
     "lines": [
+      "https://www.facebook.com/leonid.alayo",
       "Cumple años el 5 de Octubre"
     ]
   },
@@ -20,8 +24,10 @@
     "id": 3,
     "section":1,
     "title": "ALCA HUAMANÍ Edwin Alexander",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/alex-alca.png",
     "lines": [
       "Vive en Lima - Perú",
+      "https://www.facebook.com/edwinalca",
       "Cumple años el 16 de Setiembre"
     ]
   },
@@ -29,8 +35,10 @@
     "id": 4,
     "section":1,
     "title": "ALEGRIA CROVETTO Jorge Luis",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/jorge-alegria.png",
     "lines": [
       "Vive en España",
+      "https://www.facebook.com/jorgeluis.alegriacrovetto",
       "Cumple años el 15 de Mayo"
     ]
   },
@@ -38,7 +46,10 @@
     "id": 5,
     "section":1,
     "title": "ALLAUCA ANCCO Rafael Johan",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/rafael-allauca.png",
     "lines": [
+      "Vive en USA",
+      "https://www.facebook.com/rafael.allauca",
       "Cumple años el 17 de Mayo"
     ]
   },
@@ -46,8 +57,10 @@
     "id": 6,
     "section":1,
     "title": "ALVITES CORAHUA Erick Yván",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/erick-alvites.png",    
     "lines": [
       "Vive en Panamá",
+      "https://www.facebook.com/erickivan.alvitescorahua",
       "Cumple años el 25 de Diciembre"
     ]
   },
@@ -55,7 +68,9 @@
     "id": 7,
     "section":1,
     "title": "AMADO FELIX Joel Enrique",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/joel-amado.png",    
     "lines": [
+      "https://www.facebook.com/joel.amadofelix",
       "Cumple años el 15 de Marzo"
     ]
   },
@@ -63,8 +78,10 @@
     "id": 8,
     "section":1,
     "title": "APARCANA TASAYCO Oscar Alfredo",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/oscar-aparcana.png",    
     "lines": [
       "Vive en Lima - Perú",
+      "https://www.facebook.com/oscar.cachorro.7",
       "Cumple años el 10 de Noviembre"
     ]
   },
@@ -72,8 +89,10 @@
     "id": 9,
     "section":1,
     "title": "APOLINARIO SOLÍS Deyvi Omar",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/deyvi-apolinario.jpg",    
     "lines": [
       "Vive en Italia",
+      "https://www.facebook.com/deyvi.solis.1",
       "Cumple años el 31 de Mayo"
     ]
   },

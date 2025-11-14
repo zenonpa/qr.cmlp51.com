@@ -7,8 +7,8 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
 
 const pageStyles = {
   color: "#232129",
-  padding: 96,
-  padding: isMobile ? 0 : 96,
+  /*padding: isMobile ? 0 : 96,*/
+  padding: 0,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 
 

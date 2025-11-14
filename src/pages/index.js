@@ -3,11 +3,15 @@ import { StaticImage } from 'gatsby-plugin-image'
 import styled from "styled-components";
 import personasData from "../data/personas.json";
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 600;
 
 const pageStyles = {
   color: "#232129",
   padding: 96,
+  padding: isMobile ? 0 : 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
+
+
 }
 
 const TituloNombre = styled.div`
@@ -45,6 +49,11 @@ const AccordionContent = styled.div`
   overflow: hidden;
   transition: max-height 0.3s ease;
   padding: ${({ open }) => (open ? "16px" : "0 16px")};
+
+/* Mobile fix: sin padding y altura correcta */
+  @media (max-width: 600px) {
+  padding: ${({ open }) => (open ? "0" : "0")};
+  }  
 `;
 
 // Grid for 2 Columns x 5 Items

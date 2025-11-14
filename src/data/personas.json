@@ -281,7 +281,31 @@
     ]
   },
   {
-    "id": 33,
+    "id": 34,
+    "section":2,
+    "title": "CALÚA HUASUPOMA Antonio Daniel",
+    "lines": [
+      "Cumple años el 13 de Junio"
+    ]
+  },
+  {
+    "id": 35,
+    "section":2,
+    "title": "CAMARGO CUZCANO Jimmy Kalin",
+    "lines": [
+      "Cumple años el 17 de Enero"
+    ]
+  },
+  {
+    "id": 36,
+    "section":2,
+    "title": "CAMPOS BONIFACIO Luis",
+    "lines": [
+      "Cumple años el 16 de Febrero"
+    ]
+  },
+  {
+    "id": 37,
     "section":2,
     "title": "CAICEDO PALOMINO Aléx Damilo",
     "lines": [
@@ -289,67 +313,51 @@
     ]
   },
   {
-    "id": 33,
+    "id": 38,
     "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
+    "title": "CANICELA COBOS Ricardo",
     "lines": [
-      "Cumple años el 17 de Noviembre"
+      "Cumple años el 13 de Diciembre"
     ]
   },
   {
-    "id": 33,
+    "id": 39,
     "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
+    "title": "CANTT CELI Peter",
     "lines": [
-      "Cumple años el 17 de Noviembre"
+      "Cumple años el 11 de Enero"
     ]
   },
   {
-    "id": 33,
+    "id": 40,
     "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
+    "title": "CAPPELLETTI QUINTANILLA Fernando Domingo",
     "lines": [
-      "Cumple años el 17 de Noviembre"
+      "Cumple años el 21 de Diciembre"
     ]
   },
   {
-    "id": 33,
+    "id": 41,
     "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
+    "title": "CARDENAS CALERO Franklin",
     "lines": [
-      "Cumple años el 17 de Noviembre"
+      "Cumple años el 14 de Mayo"
     ]
   },
   {
-    "id": 33,
+    "id": 42,
     "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
+    "title": "CARDENAS ROQUEZ Christian Hans",
     "lines": [
-      "Cumple años el 17 de Noviembre"
+      "Cumple años el 13 de Enero"
     ]
   },
   {
-    "id": 33,
+    "id": 43,
     "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
+    "title": "CARLOTTO SOTO Giussepe",
     "lines": [
-      "Cumple años el 17 de Noviembre"
-    ]
-  },
-  {
-    "id": 33,
-    "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
-    "lines": [
-      "Cumple años el 17 de Noviembre"
-    ]
-  },
-  {
-    "id": 33,
-    "section":2,
-    "title": "CAICEDO PALOMINO Aléx Damilo",
-    "lines": [
-      "Cumple años el 17 de Noviembre"
+      "Fallecido"
     ]
   }
 ]

@@ -100,8 +100,10 @@
     "id": 10,
     "section":1,
     "title": "AQUICE GARAY Jaime Manuel",
+    "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/jaime-aquice.png",
     "lines": [
       "Trabaja en Oficial EP",
+      "https://www.facebook.com/jaimemanuel.aquicegaray",
       "Cumple años el 30 de Noviembre"
     ]
   },
@@ -109,8 +111,10 @@
     "id": 11,
     "section":1,
     "title": "ARANA REÁTEGUI Kriss",
+    "foto":"https://cmlp51.s3.us-east-1.amazonaws.com/1ra/kriss-arana.png",
     "lines": [
       "Vive en California - USA",
+      "https://www.facebook.com/kriss.arana.14",
       "Cumple años el 6 de Octubre"
     ]
   },
@@ -118,7 +122,9 @@
     "id": 12,
     "section":1,
     "title": "ARELLANO ARELLANO José Luis",
+    "foto":"https://cmlp51.s3.us-east-1.amazonaws.com/1ra/jose-arellano.png",
     "lines": [
+      "https://www.facebook.com/Yargos",
       "Cumple años el 17 de Mayo"
     ]
   },
@@ -126,7 +132,9 @@
     "id": 13,
     "section":1,
     "title": "ARIAS HUAMANÍ Wilson Jesús",
+    "foto":"https://cmlp51.s3.us-east-1.amazonaws.com/1ra/wilson-arias.png",
     "lines": [
+      "https://www.facebook.com/wilson.arias.752",
       "Cumple años el 5 de Mayo"
     ]
   },
@@ -135,6 +143,7 @@
     "section":1,
     "title": "ARROYO AZAR César Daniel",
     "lines": [
+      "https://www.instagram.com/artedeazar/",
       "Cumple años el 27 de Mayo"
     ]
   },
@@ -167,8 +176,10 @@
     "id": 18,
     "section":1,
     "title": "AYLAS GONZALES Aldo Xenón",
+    "foto":"https://cmlp51.s3.us-east-1.amazonaws.com/1ra/aldo-aylas.png",
     "lines": [
       "Vive en Lima - Perú",
+      "https://www.facebook.com/aldo.aylas",
       "Cumple años el 10 de Diciembre"
     ]
   },
@@ -184,8 +195,10 @@
     "id": 20,
     "section":1,
     "title": "BARBOSA CRUZ Miguel Ysaac",
+    "foto":"https://cmlp51.s3.us-east-1.amazonaws.com/1ra/miguel-barbosa.png",
     "lines": [
       "Vive en Lima - Perú",
+      "https://www.facebook.com/miguel.barbosacruz",
       "Cumple años el 20 de Junio"
     ]
   },

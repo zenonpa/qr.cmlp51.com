@@ -140,9 +140,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items2.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -162,9 +173,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items3.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -183,9 +205,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items4.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -204,9 +237,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items5.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -225,9 +269,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items6.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -247,9 +302,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items7.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -269,9 +335,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items8.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -291,9 +368,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items9.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}
@@ -313,9 +401,20 @@ const items10 = personasData.filter(item => item.section === 10);
             {items10.map((item) => (
             <GridItem key={item.id}>
             <TituloNombre>{item.title}</TituloNombre>
+            <img
+              src={item.foto}
+              alt={item.title}
+              style={{ width: "30%", borderRadius: "8px" }}
+            />
 
             {item.lines.map((line, i) => (
-            <Line key={i}>{line}</Line>
+            <Line key={i}>
+              {line.includes("http://") || line.includes("https://") ? (
+                <a href={line} target="_blank"   rel="noopener noreferrer">Link de contacto</a>
+                ) : (
+                line
+                )}
+            </Line>
             ))}
             </GridItem>
             ))}

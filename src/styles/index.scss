@@ -1,0 +1,15 @@
+// Estilos globales de la página index
+@use 'variables' as *;
+
+html,
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at center, #1a1510 0%, #000 70%);
+  min-height: 100vh;
+}
+
+.index-page {
+  color: #232129;
+  padding: 0;
+  font-family: -apple-system, Roboto, sans-serif, serif;
+}

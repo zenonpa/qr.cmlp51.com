@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placa Promoción LI - CMLP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oro: #c9a227;
+            --oro-claro: #e8d48a;
+            --oro-sombra: #8b7312;
+            --negro: #0a0a0a;
+            --gris-oscuro: #1a1a1a;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background: radial-gradient(ellipse at center, #1a1510 0%, #000 70%);
+            color: var(--oro);
+            font-family: 'Crimson Text', Georgia, serif;
+            margin: 0;
+            padding: 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* Imagen de la placa física */
+        .placa-imagen-section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .placa-imagen-section img {
+            max-width: 100%;
+            height: auto;
+            border: 4px solid var(--oro);
+            border-radius: 4px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(201, 162, 39, 0.2);
+        }
+        .placa-imagen-section .pie {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--oro-claro);
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
+
+        .placa-container {
+            background: linear-gradient(160deg, #0d0d0d 0%, var(--gris-oscuro) 50%, #0d0d0d 100%);
+            border: 3px double var(--oro);
+            padding: 2.5rem 3rem;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(201, 162, 39, 0.15), inset 0 0 60px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .placa-container::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px solid rgba(201, 162, 39, 0.25);
+            pointer-events: none;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .escudo-placeholder {
+            width: 72px;
+            height: 88px;
+            border: 2px solid rgba(201, 162, 39, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            color: var(--oro-claro);
+            flex-shrink: 0;
+        }
+
+        .header-center { flex: 1; min-width: 0; }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+            margin: 0 0 0.25rem 0;
+            color: var(--oro);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.2rem, 2.8vw, 1.75rem);
+            margin: 0 0 0.5rem 0;
+            color: #fff;
+            font-weight: 600;
+        }
+        .subtitulo {
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            color: var(--oro-claro);
+            margin: 0;
+            letter-spacing: 0.03em;
+        }
+
+        .lema-religioso {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+            margin: 2rem 0;
+            padding: 1rem 1.5rem;
+            color: #f1e5ac;
+            line-height: 1.7;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            border-top: 1px solid rgba(201, 162, 39, 0.3);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+        }
+
+        .nombres-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem 1.25rem;
+            text-align: left;
+            font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .columna { display: flex; flex-direction: column; }
+        .nombre-item {
+            margin-bottom: 1px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+            color: #e8e0c8;
+        }
+
+        .nombre-item--hoverable {
+            position: relative;
+            cursor: pointer;
+        }
+        /* Puente invisible para no perder el hover al mover el cursor al popover */
+        .nombre-item--hoverable::before {
+            content: '';
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 100%;
+            height: 10px;
+            z-index: 99;
+        }
+        .nombre-item--hoverable:hover::before {
+            display: block;
+        }
+        .nombre-item-popover {
+            display: none;
+            position: absolute;
+            z-index: 100;
+            left: 0;
+            bottom: 100%;
+            margin-bottom: 6px;
+            pointer-events: auto;
+            background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 2px solid var(--oro);
+            border-radius: 8px;
+            padding: 12px;
+            min-width: 260px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+            text-align: center;
+            text-transform: none;
+        }
+        .nombre-item--hoverable:hover .nombre-item-popover,
+        .nombre-item--hoverable.popover-open .nombre-item-popover {
+            display: block;
+        }
+        .nombre-item-titulo {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--oro);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        .nombre-item-popover .nombre-item-img {
+            width: 30%;
+            min-width: 80px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nombre-item-line {
+            font-size: 0.8rem;
+            color: #e8e0c8;
+            margin: 4px 0;
+        }
+        .nombre-item-line a {
+            color: var(--oro-claro);
+            text-decoration: none;
+        }
+        .nombre-item-line a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--oro);
+        }
+
+        .lema-final {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+            color: var(--oro);
+            letter-spacing: 0.03em;
+        }
+        .fecha {
+            margin-top: 0.75rem;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            text-align: right;
+            padding: 10px;
+        }
+
+        /* En móvil el popover se muestra debajo para no salir de pantalla y facilitar el toque */
+        @media (max-width: 768px) {
+            .nombre-item-popover {
+                bottom: auto;
+                top: 100%;
+                margin-bottom: 0;
+                margin-top: 6px;
+            }
+            .nombre-item--hoverable::before {
+                bottom: auto;
+                top: 100%;
+                height: 8px;
+            }
+        }
+        @media (max-width: 768px) {
+            .placa-container { padding: 1.5rem 1.25rem; }
+            .header-logos { flex-wrap: wrap; justify-content: center; }
+            .escudo-placeholder { width: 56px; height: 70px; font-size: 0.55rem; }
+            .nombres-grid { grid-template-columns: repeat(2, 1fr); font-size: 0.6rem; }
+        }
+        @media (max-width: 480px) {
+            .nombres-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrap">
+    <!-- Imagen de la placa oficial -->
+    <section class="placa-imagen-section" aria-label="Imagen de la placa">
+        <img src="PlacaCMLP51.webp" alt="Placa Promoción LI - Colegio Militar Leoncio Prado - CMLP51" width="800" height="auto" loading="eager">
+        <p class="pie">Placa conmemorativa Promoción LI «La Mejor» — CMLP</p>
+    </section>
+
+    <div class="placa-container">
+        <div class="header-logos">
+            <div class="escudo-placeholder">ESCUDO CMLP</div>
+            <div class="header-center">
+                <h1>COLEGIO MILITAR "LEONCIO PRADO"</h1>
+                <h2>PROMOCIÓN LI "LA MEJOR"</h2>
+                <div class="subtitulo">S.O. P.N.P. "GIUSEPPE CARLOTTO SOTO"<br>1995 - 1997</div>
+            </div>
+            <div class="escudo-placeholder">EJÉRCITO DEL PERÚ</div>
+        </div>
+
+    <div class="lema-religioso">
+        SEÑOR, AUN NO SOMOS, LO QUE QUEREMOS SER, NO SOMOS LO QUE DEBEMOS SER,<br>
+        NI SOMOS, LO QUE VAMOS A SER, PERO GRACIAS SEÑOR, POR NO SER, LO QUE ANTES ERAMOS!
+    </div>
+
+    <div class="nombres-grid">
+        <div class="columna">
+            <div class="nombre-item nombre-item--hoverable">AGUIRRE QUISPE Jorge Luis
+                <div class="nombre-item-popover">
+                    <div class="nombre-item-titulo">AGUIRRE QUISPE Jorge Luis</div>
+                    <img src="https://cmlp51.s3.us-east-1.amazonaws.com/1ra/jorge-aguirre.jpg" alt="AGUIRRE QUISPE Jorge Luis" class="nombre-item-img">
+                    <div class="nombre-item-line">Vive en Italia</div>
+                    <div class="nombre-item-line"><a href="https://www.facebook.com/jorgeluis.aguirre.90" target="_blank" rel="noopener noreferrer">Link de contacto</a></div>
+                    <div class="nombre-item-line">Cumple años el 8 de Octubre</div>
+                </div>
+            </div>
+            <div class="nombre-item">ALAYO PALACIOS Leonid Roberto</div>
+            <div class="nombre-item">ALCA HUAMANI Edwin Alexander</div>
+            <div class="nombre-item">ALCANTARA LANYI Cedric</div>
+            <div class="nombre-item">ALEGRIA CROVETTO Jorge Luis</div>
+            <div class="nombre-item">ALLAUCA ANCCO Rafael Johan</div>
+            <div class="nombre-item">ALVITES CORAHUA Erick Yvan</div>
+            <div class="nombre-item">AMADO FELIX Joel Enrique</div>
+            <div class="nombre-item">APARCANA TASAYCO Oscar Alfredo</div>
+            <div class="nombre-item">APOLINARIO SOLIS Deyvi Omar</div>
+            <div class="nombre-item">AQUICE GARAY Jaime Manuel</div>
+            <div class="nombre-item">ARANA REATEGUI Kriss</div>
+            <div class="nombre-item">ARELLANO ARELLANO Jose Luis</div>
+            <div class="nombre-item">ARIAS HUAMANI Wilson Jesus</div>
+            <div class="nombre-item">ARTEAGA HUAMAN Alan Denis</div>
+            <div class="nombre-item">ARROYO AZAR Cesar Daniel</div>
+            <div class="nombre-item">AYALA LIZARRAGA Humberto</div>
+            <div class="nombre-item">AYALA PINEDA Gary Giancarlo</div>
+            <div class="nombre-item">AYLAS GONZALES Aldo Xenon</div>
+            <div class="nombre-item">AZPARRENT CORDERO Dario</div>
+            <div class="nombre-item">BARBOSA CRUZ Miguel Ysac</div>
+            <div class="nombre-item">BARRENECHEA TITO Carlos Fernando</div>
+            <div class="nombre-item">BASTAS ESPINOZA Christian Ernesto</div>
+            <div class="nombre-item">BASTIDAS ORIHUELA Jarol Adolfo</div>
+            <div class="nombre-item">BASTIDAS ORIHUELA Jarol Jorge</div>
+            <div class="nombre-item">BEJARANO AGUADO Cayo Darwin</div>
+            <div class="nombre-item">BELLO VILLAR Giorgio Herbert</div>
+            <div class="nombre-item">BENITES PEÑA Victor Manuel</div>
+            <div class="nombre-item">BERENGUEL BARBOZA Jose Antonio</div>
+            <div class="nombre-item">BERNAL CHAVEZ Jose David</div>
+            <div class="nombre-item">BERNAOLA TURCO Francis Paul</div>
+            <div class="nombre-item">BERRIOS BAUDAZIO Carlos Manuel</div>
+            <div class="nombre-item">BOJORQUEZ DIAZ Fernando Alejandro</div>
+            <div class="nombre-item">CABELLOS NARVAEZ Pedro Edmundo</div>
+            <div class="nombre-item">CAICEDO PALOMINO Alex Danilo</div>
+            <div class="nombre-item">CALUA HUASUPOMA Antonio Daniel</div>
+            <div class="nombre-item">CAMARGO CUZCANO Jimmy Kalin</div>
+            <div class="nombre-item">CAMPOS BONIFACIO Luis</div>
+            <div class="nombre-item">CANICELA COBOS Ricardo</div>
+            <div class="nombre-item">CANTI CELI Peter</div>
+            <div class="nombre-item">CAPPELLETTI QUINTANILLA Fernando Domingo</div>
+            <div class="nombre-item">CARDENAS CALERO Franklin</div>
+            <div class="nombre-item">CARDENAS ROQUEZ Christian Hans</div>
+            <div class="nombre-item">CARLOTTO SOTO Giussepe</div>
+            <div class="nombre-item">CARRERA PANAQUE Goshiel Fernando</div>
+            <div class="nombre-item">CASTILLO JIMENEZ Fernando Jesus</div>
+            <div class="nombre-item">CASTILLO MEDINA Henry Edmundo</div>
+            <div class="nombre-item">CASTRE PONCE Elvis Ericson</div>
+            <div class="nombre-item">CASTRO CASTAÑEDA Eduardo Alfredo</div>
+            <div class="nombre-item">CHACALTANA SANCHEZ Cesar Eduardo</div>
+            <div class="nombre-item">CHAVEZ NOLASCO Luis Fernando</div>
+            <div class="nombre-item">CHUCK AZUERO Cherr Armando</div>
+            <div class="nombre-item">CHUQUILLANQUI GAMARRA Carlos Severino</div>
+            <div class="nombre-item">CIUDAD MATTOS Eduardo Angel</div>
+            <div class="nombre-item">COA DURAND Carlos Alberto</div>
+            <div class="nombre-item">COBARRUBIA FLORES Jimmy Elvis</div>
+            <div class="nombre-item">CONTRERAS RIVERA Joe Luis</div>
+            <div class="nombre-item">CORDOVA RAMIREZ Alfredo Felix</div>
+            <div class="nombre-item">CORDOVA TRUJILLO Omar Rodrigo</div>
+            <div class="nombre-item">CRIOLLO HERRERA Rhudy Raul</div>
+            <div class="nombre-item">CUETO GONZALEZ Carlos Enrique</div>
+            <div class="nombre-item">CUEVA PAGAZA Charlis Emmanuel</div>
+            <div class="nombre-item">DAVILA NIMA Jorsh Eritson Abel</div>
+            <div class="nombre-item">DEL AGUILA PERALES Alfredo</div>
+            <div class="nombre-item">DELGADO VASQUEZ Luis Alejandro</div>
+            <div class="nombre-item">DEZA QUINTANILLA Mario</div>
+            <div class="nombre-item">DIAZ VALLE Alfredo Omar</div>
+            <div class="nombre-item">DOLORIER ESQUIVIAS Manuel Arturo</div>
+            <div class="nombre-item">DOMINGUEZ BERROSPI Lee Percy</div>
+            <div class="nombre-item">ELIAS DE LA CRUZ Alex Cristofper</div>
+            <div class="nombre-item">ELIAS IGLESIAS Jose Gianfranco</div>
+            <div class="nombre-item">ENCINA BLAS Jorge</div>
+            <div class="nombre-item">ESCALANTE VERA Raymundo Ricardo</div>
+            <div class="nombre-item">ESTRADA DIAZ Marlon</div>
+            <div class="nombre-item">FABIAN HILARION Dany Alfredo</div>
+            <div class="nombre-item">FALCON BALDEON Francy Azael</div>
+            <div class="nombre-item">FARIAS ZANCA Jose Luis</div>
+            <div class="nombre-item">FERNANDEZ DIAZ Edwin Joel</div>
+            <div class="nombre-item">FIGUEROA QUIQUIA Raul Manuel</div>
+            <div class="nombre-item">FLORES CONGACHE Daniel Maykoln</div>
+        </div>
+
+        <div class="columna">
+            <div class="nombre-item">FLORES LOPEZ Omar Alberto</div>
+            <div class="nombre-item">FRANCIA SANCHEZ Angel Esteban</div>
+            <div class="nombre-item">FUENTES SHOWING Guillermo Martin</div>
+            <div class="nombre-item">GALLEGOS CASTRO Fredy Manuel</div>
+            <div class="nombre-item">GARCIA BENAVENTE Julio Cesar</div>
+            <div class="nombre-item">GARCIA MARTINEZ Romel Adolfo</div>
+            <div class="nombre-item">GIL ARECHAGA William</div>
+            <div class="nombre-item">GRADOS ROMERO Eduardo Alcibiades</div>
+            <div class="nombre-item">GRANDEZ TOLEDO Carlos Alberto</div>
+            <div class="nombre-item">GUANILO GARCIA Alexander Christian</div>
+            <div class="nombre-item">GUERRERO LEON Carlos Ernesto</div>
+            <div class="nombre-item">GUILLEN VARGAS Victor Raul</div>
+            <div class="nombre-item">GUIZADA GIRIO Aldo Christian</div>
+            <div class="nombre-item">GUTIERREZ CHUQUICHANCA Felix Miguel</div>
+            <div class="nombre-item">HARO OSTOLAZA Renzo Danilo</div>
+            <div class="nombre-item">HERNANDEZ CAHUAMARI Cesar Eduardo</div>
+            <div class="nombre-item">HERRERA CHAVEZ Ray Leonard</div>
+            <div class="nombre-item">HERRERA JARAMILLO Alfredo Luis</div>
+            <div class="nombre-item">HUAMAN BANCES Hernan Wilder</div>
+            <div class="nombre-item">HUERTAS ESPIRITU Pablo Roberto</div>
+            <div class="nombre-item">HUILLCA CUSI Javier Florentino</div>
+            <div class="nombre-item">HUNDSKOPF JOO Frank Christopher</div>
+            <div class="nombre-item">HURTADO INAMINE Miguel Angel</div>
+            <div class="nombre-item">HURTADO LOZANO Angel Grimaldo</div>
+            <div class="nombre-item">IBAÑEZ MERMA Henry Arturo</div>
+            <div class="nombre-item">INCHICSANA FERNANDEZ Luis Enrique</div>
+            <div class="nombre-item">IZQUIERDO OYOLA Frank Luis</div>
+            <div class="nombre-item">JARAMA ARDITTO Renzo Renato</div>
+            <div class="nombre-item">JIMENEZ PONCE Ivan Elmer</div>
+            <div class="nombre-item">JULCA VIDAL Percy Otilio</div>
+            <div class="nombre-item">JULCARIMA QUISPE Jack Segundo</div>
+            <div class="nombre-item">LA ROSA TERRONES Carlos Richard</div>
+            <div class="nombre-item">LAVADO SANCHEZ Israel Ausberto</div>
+            <div class="nombre-item">LI HUAPALLA Carlos Enrique</div>
+            <div class="nombre-item">LINDO TURIN Gary Paul</div>
+            <div class="nombre-item">LIZARDO ZUMAETA Carlos Alberto</div>
+            <div class="nombre-item">LOAYZA ANZARDO Marco Antonio Gaston</div>
+            <div class="nombre-item">LOBATO ALIPAZAGA Kenny Jesus</div>
+            <div class="nombre-item">LOPEZ AYALA Juan Manuel</div>
+            <div class="nombre-item">LUJAN ANYOSA Teodoro</div>
+            <div class="nombre-item">MATEO RODULFO Michael Freddy</div>
+            <div class="nombre-item">MEJIA RIOS Cesar</div>
+            <div class="nombre-item">MENA ROMERO Jefferson</div>
+            <div class="nombre-item">MENACHO ALVARADO Alex Alfonso</div>
+            <div class="nombre-item">MENDOZA PAREJA Rusber</div>
+            <div class="nombre-item">MEZA HOSPINA Luis Alberto</div>
+            <div class="nombre-item">MEZA SALCEDO Luis Alberto</div>
+            <div class="nombre-item">MINAYA HENRIQUEZ Giancarlo Hermer</div>
+            <div class="nombre-item">MIRANDA ACERO Javier Omar</div>
+            <div class="nombre-item">MONTOYA CACERES Roggers Michael</div>
+            <div class="nombre-item">MORET RULJANCIC Jose Antonio</div>
+            <div class="nombre-item">MOSCOSO MONTOYA Javier Ricardo</div>
+            <div class="nombre-item">NIETO CRUZ Victor Leoncio</div>
+            <div class="nombre-item">NUÑEZ PERALTA Jorge Daniel</div>
+            <div class="nombre-item">OBREGON ROMERO Jheinsom Paul</div>
+            <div class="nombre-item">OCHOA HUAYTA Eddie Michael</div>
+            <div class="nombre-item">OLIVERA LEON Roberto Jesus</div>
+            <div class="nombre-item">OROPEZA LUNA Eliseo</div>
+            <div class="nombre-item">OROSCO CASTILLO Jhon</div>
+            <div class="nombre-item">ORTEGA GARCIA Ezequiel Daniel</div>
+            <div class="nombre-item">ORTEGA GUILLEN Juan Manuel</div>
+            <div class="nombre-item">ORTIZ QUISPE Ricardo</div>
+            <div class="nombre-item">OSCANOA CRISOSTOMO Percy Lazaro</div>
+            <div class="nombre-item">OSTOS SOLIS Jimmy Edward</div>
+            <div class="nombre-item">OVALLE GEREDA Giancarlo</div>
+            <div class="nombre-item">PALACIOS REATEGUI Daniel</div>
+            <div class="nombre-item">PALMA CUYUBAMBA Miguel Ernesto</div>
+            <div class="nombre-item">PALOMARES TOVAL Sergio Steven</div>
+            <div class="nombre-item">PALOMINO LAIMES Angelo Ruben</div>
+            <div class="nombre-item">PALOMINO SEGURA Gregory Santiago</div>
+            <div class="nombre-item">PAREDES AYALA Zenon Maximo</div>
+            <div class="nombre-item">PAZ MARTINEZ Williams Edward</div>
+            <div class="nombre-item">PEREZ CRUZ Ronald</div>
+            <div class="nombre-item">PILLACA GARAUNDO Wilfredo</div>
+            <div class="nombre-item">PIMENTEL VELIZ Luis Alberto</div>
+            <div class="nombre-item">PIZARRO GARCIA Abel Valois</div>
+            <div class="nombre-item">PLASENCIA MENDOZA Marko Kenneth</div>
+            <div class="nombre-item">POMA DHAGA DEL CASTILLO Juan Alberto</div>
+            <div class="nombre-item">PORTILLA ABARCA Pedro Miguel</div>
+            <div class="nombre-item">PORTILLO LEYVA Yimmy</div>
+        </div>
+
+        <div class="columna">
+            <div class="nombre-item">PRADO CRISPIN Neils Fernando</div>
+            <div class="nombre-item">QUEVEDO RODRIGUEZ Juan Carlos</div>
+            <div class="nombre-item">QUINO MORALES Temistocles Saul</div>
+            <div class="nombre-item">QUISPE CACERES Jose Alberto</div>
+            <div class="nombre-item">QUISPE CUZCANO Alberto</div>
+            <div class="nombre-item">QUISPE INFANTES Giovanni</div>
+            <div class="nombre-item">QUISPE ZELA Rolando</div>
+            <div class="nombre-item">RAMON RIOS Jesus Luis</div>
+            <div class="nombre-item">RAMOS HERNANDEZ Jose Alberto</div>
+            <div class="nombre-item">RAMOS OLAZO Julio Cesar</div>
+            <div class="nombre-item">REE DELGADILLO Luis Orlando</div>
+            <div class="nombre-item">REFULIO BARZOLA Silvio Jomeini</div>
+            <div class="nombre-item">REINAGA CCASANI Enver Carlos</div>
+            <div class="nombre-item">REJANO GARAY Richard John</div>
+            <div class="nombre-item">RENGIFO RENGIFO Giancarlo Guillermo</div>
+            <div class="nombre-item">REYES BEIZAGA Gian Carlo Alexis</div>
+            <div class="nombre-item">REYES HEREDIA Carlos Alberto</div>
+            <div class="nombre-item">RIVERA RIVERA Luis Guillermo</div>
+            <div class="nombre-item">ROCHA FLORES Christian</div>
+            <div class="nombre-item">RODRIGO MAROJICA Ricardo Enrique</div>
+            <div class="nombre-item">RODRIGUEZ CASTRO John Willian</div>
+            <div class="nombre-item">RODRIGUEZ RAMIREZ Yave Javier</div>
+            <div class="nombre-item">ROJAS DIAZ Daniel Alexis</div>
+            <div class="nombre-item">ROMAN MONTAÑEZ Rony Jorge</div>
+            <div class="nombre-item">ROMERO DIAZ Juan Manuel</div>
+            <div class="nombre-item">ROMERO OLIVERA Julio Cesar</div>
+            <div class="nombre-item">ROMERO REBOTTARO Luis Alberto</div>
+            <div class="nombre-item">RUA GUZMAN Javier</div>
+            <div class="nombre-item">SAENZ RUIZ Victor Francisco</div>
+            <div class="nombre-item">SALAZAR CUZCANO Ronald Asisclo</div>
+            <div class="nombre-item">SALAZAR LIZARZABURU Victor Raul</div>
+            <div class="nombre-item">SALINAS QUISPE Glenn Humberto</div>
+            <div class="nombre-item">SANCHEZ ALMEIDA Luis Jesus</div>
+            <div class="nombre-item">SANCHEZ TOLEDO Luis Alberto</div>
+            <div class="nombre-item">SANDOVAL PEÑA Gustavo Adolfo</div>
+            <div class="nombre-item">SANTILLAN MERCADO Jaime Augusto</div>
+            <div class="nombre-item">SERNA LOPEZ Edinson Ivan Teodoro</div>
+            <div class="nombre-item">SERPA PORRAS Stravinsky Christian</div>
+            <div class="nombre-item">SILVA LEYVA Lord Martin</div>
+            <div class="nombre-item">SIVINCHA BLAS Felix Jimmy</div>
+            <div class="nombre-item">SORIANO PINEDA Rodolfo Valentin</div>
+            <div class="nombre-item">SUAREZ HUAMANI Yury Erasmo</div>
+            <div class="nombre-item">TERRANOVA CARIGGIA Luis Alberto</div>
+            <div class="nombre-item">TISZA KIBIEN Daniel David</div>
+            <div class="nombre-item">TORRES SALAS Rommel</div>
+            <div class="nombre-item">TOVALINO ROMERO Naggib Alfonso</div>
+            <div class="nombre-item">TRINIDAD VALENZUELA Luis Alberto</div>
+            <div class="nombre-item">TUESTA VALQUI Juan Carlos Jair</div>
+            <div class="nombre-item">URBINA MORENO Henry</div>
+            <div class="nombre-item">URETA HUANCAHUIRE Edwin Alfonso</div>
+            <div class="nombre-item">VARGAS ARCE Jose Luis</div>
+            <div class="nombre-item">VARGAS LUMBRERAS Juan Carlos</div>
+            <div class="nombre-item">VEGA GALLEGOS Giancarlo Roberto</div>
+            <div class="nombre-item">VEGA PACHECO Cesar Ernesto</div>
+            <div class="nombre-item">VEGA RAMIREZ Danny Joel</div>
+            <div class="nombre-item">VEGA RANILLA Boris Rolando</div>
+            <div class="nombre-item">VIDAL PUMA Ivan</div>
+            <div class="nombre-item">VILA MATTA Willian Ronal</div>
+            <div class="nombre-item">VILCHEZ CAMPUSANO Angel Jesus</div>
+            <div class="nombre-item">VILLAGARAY CORAHUA Delwis Esteban</div>
+            <div class="nombre-item">VILLANUEVA AGUILAR Jose Luis</div>
+            <div class="nombre-item">VILLANUEVA GONZALES Jesus Gabriel</div>
+            <div class="nombre-item">VILLAVERDE MOLINEROS Max Giancarlo</div>
+            <div class="nombre-item">VILLENA MARTINEZ Joze Carlos</div>
+            <div class="nombre-item">WONG FLORES Jose Augusto</div>
+            <div class="nombre-item">YEPEZ GUILLEN Leonel Alexander</div>
+            <div class="nombre-item">YNGA VILLALVA Moises Pedro</div>
+            <div class="nombre-item">ZAMORA VELASQUEZ Marco Antonio</div>
+            <div class="nombre-item">ZUÑIGA WONG Roberto Luis</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="lema-final">POR LA GLORIA DE LOS LEONCIOPRADINOS DE AYER, HOY Y SIEMPRE</div>
+        <div class="fecha">La Perla - Callao, 20 de Diciembre de 2025</div>
+    </footer>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initPopoverTouch() {
+        var items = document.querySelectorAll('.nombre-item--hoverable');
+        if (!items.length) return;
+
+        function closeAll() {
+            items.forEach(function(el) { el.classList.remove('popover-open'); });
+        }
+
+        function isClickInsidePopoverOrTrigger(target) {
+            return target.closest && target.closest('.nombre-item--hoverable');
+        }
+
+        items.forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var wasOpen = el.classList.contains('popover-open');
+                closeAll();
+                if (!wasOpen) el.classList.add('popover-open');
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!isClickInsidePopoverOrTrigger(e.target)) closeAll();
+        });
+
+        document.addEventListener('touchstart', function(e) {
+            if (!isClickInsidePopoverOrTrigger(e.target)) closeAll();
+        }, { passive: true });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPopoverTouch);
+    } else {
+        initPopoverTouch();
+    }
+})();
+</script>
+
+</body>
+</html>

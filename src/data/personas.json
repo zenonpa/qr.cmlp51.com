@@ -110,7 +110,7 @@
   {
     "id": "11",
     "section": 1,
-    "title": "ARANA REÁTEGUI Kriss",
+    "title": "ARANA REATEGUI Kriss",
     "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/1ra/kriss-arana.png",
     "lines": [
       "Vive en California - USA",
@@ -421,6 +421,7 @@
     "id": "44",
     "section": 2,
     "title": "CARLOTTO SOTO Giussepe",
+    "fallecido":true, 
     "foto": "",
     "lines": [
       "Fallecido"
@@ -619,8 +620,11 @@
     "id": "72",
     "section": 4,
     "title": "ENCINA BLAS Jorge",
+    "fallecido": true,
     "foto": "",
-    "lines": []
+    "lines": [
+      "FALLECIDO"
+    ]
   },
   {
     "id": "73",
@@ -990,8 +994,11 @@
     "id": "125",
     "section": 6,
     "title": "MENDOZA PAREJA Rusber",
+    "fallecido": true,
     "foto": "",
-    "lines": []
+    "lines": [
+      "FALLECIDO"
+    ]
   },
   {
     "id": "126",
@@ -1032,8 +1039,11 @@
     "id": "131",
     "section": 6,
     "title": "MORET RULJANCIC Jose Antonio",
+    "fallecido": true,
     "foto": "",
-    "lines": []
+    "lines": [
+      "FALLECIDO"
+    ]
   },
   {
     "id": "132",
@@ -1095,8 +1105,11 @@
     "id": "140",
     "section": 7,
     "title": "OROSCO CASTILLO Jhon",
+    "fallecido": true,
     "foto": "",
-    "lines": []
+    "lines": [
+      "FALLECIDO"
+    ]
   },
   {
     "id": "141",
@@ -1184,7 +1197,11 @@
     "section": 7,
     "title": "PAREDES AYALA Zenon Maximo",
     "foto": "https://cmlp51.s3.us-east-1.amazonaws.com/7ma/zenon-paredes.jpg",
-    "lines": []
+    "lines": [
+      "Vive en Colombia",
+      "https://www.facebook.com/zenonpa/",
+      "Cumple años el 19 de Enero"
+    ]
   },
   {
     "id": "153",
@@ -1211,8 +1228,11 @@
     "id": "156",
     "section": 7,
     "title": "PIMENTEL VELIZ Luis Alberto",
+    "fallecido": true,
     "foto": "",
-    "lines": []
+    "lines": [
+      "FALLECIDO"
+    ]
   },
   {
     "id": "157",
@@ -1673,8 +1693,11 @@
     "id": "222",
     "section": 10,
     "title": "VILLANUEVA AGUILAR Jose Luis",
+    "fallecido": true,   
     "foto": "",
-    "lines": []
+    "lines": [
+      "FALLECIDO"
+    ]
   },
   {
     "id": "223",
@@ -1728,8 +1751,10 @@
   {
     "id": "230",
     "section": 2,
-    "title": "Camargo Gomez Gerson",
+    "title": "CAMARGO GOMEZ Gerson Alex",
     "foto": "",
-    "lines": []
-  }
+    "lines": [
+      "https://www.facebook.com/gerson.camargo.gomez",
+      "Cumple años el 27 de Junio"
+    ] }
 ]

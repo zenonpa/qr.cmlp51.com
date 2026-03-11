@@ -181,6 +181,11 @@
   border-bottom: 1px solid rgba(201, 162, 39, 0.12);
   color: #e8e0c8;
 
+  &:hover {
+    background: $oro;
+    color: #000;
+  }
+
   &--hoverable {
     position: relative;
     cursor: pointer;
@@ -204,10 +209,6 @@
   &.popover-open .placa-nombre-item-popover {
     display: block;
   }
-}
-
-.placa-nombre-item--hoverable:hover .placa-nombre-item-popover {
-  display: block;
 }
 
 .placa-nombre-item-popover {
@@ -267,6 +268,20 @@
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(201, 162, 39, 0.3);
   display: block;
+}
+
+.placa-icono-fallecido {
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.placa-icono-fallecido-detail {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 .placa-nombre-item-popover .placa-nombre-item-img {

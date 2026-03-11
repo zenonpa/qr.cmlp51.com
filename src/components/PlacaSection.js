@@ -17,10 +17,11 @@ function splitIntoColumns(arr, cols = 3) {
 function PlacaNombreItem({ item }) {
   const [open, setOpen] = useState(false)
   const containerRef = useRef(null)
-  const hasPopover = item.foto && item.lines && item.lines.length > 0
+  const hasFoto = item.foto && String(item.foto).trim() !== ""
+  const hasLines = Array.isArray(item.lines) && item.lines.length > 0
 
   useEffect(() => {
-    if (!open || !hasPopover) return
+    if (!open) return
     const handleClickOutside = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         setOpen(false)
@@ -32,32 +33,39 @@ function PlacaNombreItem({ item }) {
       document.removeEventListener("mousedown", handleClickOutside)
       document.removeEventListener("touchstart", handleClickOutside)
     }
-  }, [open, hasPopover])
+  }, [open])
 
   return (
     <div
       ref={containerRef}
-      className={`placa-nombre-item ${hasPopover ? "placa-nombre-item--hoverable" : ""} ${open ? "popover-open" : ""}`}
-      onClick={hasPopover ? () => setOpen(!open) : undefined}
-      onKeyDown={hasPopover ? (e) => e.key === "Enter" && setOpen(!open) : undefined}
-      role={hasPopover ? "button" : undefined}
-      tabIndex={hasPopover ? 0 : undefined}
+      className={`placa-nombre-item placa-nombre-item--hoverable ${open ? "popover-open" : ""}`}
+      onClick={() => setOpen(!open)}
+      onKeyDown={(e) => e.key === "Enter" && setOpen(!open)}
+      role="button"
+      tabIndex={0}
     >
-      {item.title}
-      {hasPopover && (
-        <div
-          className="placa-nombre-item-popover"
-          onClick={(e) => e.stopPropagation()}
-          role="dialog"
-          aria-label="Detalle"
-        >
-          <div className="placa-nombre-item-titulo">{item.title}</div>
+      {item.title} {item.fallecido && (<img src="/cruz.png" alt="Fallecido" className="placa-icono-fallecido" />)}
+      <div
+        className="placa-nombre-item-popover"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-label="Detalle"
+      >
+        <div className="placa-nombre-item-titulo">
+          {item.title}
+          {item.fallecido && (
+            <img src="/cruz.png" alt="Fallecido" className="placa-icono-fallecido-detail" />
+          )}
+        </div>
+        {hasFoto && (
           <img
             src={item.foto}
             alt={item.title}
             className="placa-nombre-item-img"
           />
-          {item.lines.map((line, i) => (
+        )}
+        {hasLines &&
+          item.lines.map((line, i) => (
             <div key={i} className="placa-nombre-item-line">
               {line.includes("http://") || line.includes("https://") ? (
                 <a href={line} target="_blank" rel="noopener noreferrer">
@@ -68,8 +76,7 @@ function PlacaNombreItem({ item }) {
               )}
             </div>
           ))}
-        </div>
-      )}
+      </div>
     </div>
   )
 }
@@ -79,7 +86,7 @@ export default function PlacaSection() {
 
   const columns = useMemo(() => {
     const sorted = [...personasData].sort(
-      (a, b) => (a.section - b.section) || (Number(a.id) - Number(b.id))
+      (a, b) => Number(a.id) - Number(b.id)
     )
     const filtered = filter.trim()
       ? sorted.filter((p) =>

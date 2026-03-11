@@ -9,9 +9,9 @@
 }
 
 .placa-page-wrap {
-  max-width: 1100px;
+  max-width: none;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .placa-imagen-section {
@@ -165,7 +165,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem 1.25rem;
   text-align: left;
-  font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+  font-size: clamp(1.35rem, 1.2vw, 0.7rem);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -367,7 +367,7 @@
 
   .placa-nombres-grid {
     grid-template-columns: repeat(2, 1fr);
-    font-size: 0.9rem; /* +50% respecto a 0.6rem en móvil */
+    font-size: 1.3rem; /* +50% respecto a 0.6rem en móvil */
   }
 }
 

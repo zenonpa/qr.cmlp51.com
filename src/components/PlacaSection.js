@@ -83,18 +83,35 @@ function PlacaNombreItem({ item }) {
 
 export default function PlacaSection() {
   const [filter, setFilter] = useState("")
+  const [isMobile, setIsMobile] = useState(false)
 
-  const columns = useMemo(() => {
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const update = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    update()
+    window.addEventListener("resize", update)
+    return () => window.removeEventListener("resize", update)
+  }, [])
+
+  const filteredList = useMemo(() => {
     const sorted = [...personasData].sort(
       (a, b) => Number(a.id) - Number(b.id)
     )
-    const filtered = filter.trim()
-      ? sorted.filter((p) =>
-          p.title.toLowerCase().includes(filter.trim().toLowerCase())
-        )
-      : sorted
-    return splitIntoColumns(filtered, 3)
+    const trimmed = filter.trim()
+    if (!trimmed) return sorted
+    return sorted.filter((p) =>
+      p.title.toLowerCase().includes(trimmed.toLowerCase())
+    )
   }, [filter])
+
+  const columns = useMemo(() => {
+    if (isMobile) {
+      return [filteredList]
+    }
+    return splitIntoColumns(filteredList, 3)
+  }, [filteredList, isMobile])
 
   return (
     <section className="placa-section" aria-label="Placa Promoción LI">
